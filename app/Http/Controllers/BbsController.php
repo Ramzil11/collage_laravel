@@ -7,14 +7,11 @@ use App\Models\Bb;
 class BbsController extends Controller
 {
     public function index() {
-        $bbs = Bb::latest()->get();
-        $s = "Объявления\r\n\r\n";
-        foreach ($bbs as $bb) {
-            $s .= $bb->title . "\r\n";
-            $s .= $bb->price . " руб.\r\n";
-            $s .= "\r\n";
+        $context = ['bbs' => Bb::latest()->get()];
+        return view('index', $context);
+       
         }
-        return response($s)
-        ->header('Content-Type', 'text/plain');
-        }
+    public function detail(Bb $bb) {
+        return view('detail', ['bb' => $bb]);
+    }
 }
