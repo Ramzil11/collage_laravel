@@ -1,0 +1,12 @@
+h1 {
+    color: red;
+    background: url("D:/college_project_web/laravel/bboard/public/images/logo.png") left / auto 100% no-repeat,
+    url("D:/college_project_web/laravel/bboard/public/images/logo.png") right / auto 100% no-repeat;
+} 
+div{
+    background-color: aqua;
+}
+h4 {
+    color: red;
+    
+} 

@@ -9,7 +9,11 @@
  </head>
  <body>
  <div class="container">
- <h1 class="my-3 text-center">Объявления</h1>
+@extends('layouts.app')
+
+@section('title', 'Главная')
+
+@section('content')
  @if (count($bbs) > 0)
  <table class="table table-striped table-borderless">
  <thead>
@@ -25,13 +29,14 @@
  <td><h4>{{ $bb->title }}</h4></td>
  <td>{{ $bb->price }}</td>
  <td>
- <a href="/{{ $bb->id }}/">Подробнее...</a>
+ <a href="{{ route('detail', ['bb' => $bb->id]) }}">Подробнее...</a>
  </td> 
  </tr>
  @endforeach
  </tbody>
  </table>
 @endif
+@endsection('content')
  </div>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
  </body>
